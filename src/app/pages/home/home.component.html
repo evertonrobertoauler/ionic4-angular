@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Ionic 4</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-button type="button" color="secondary" size="large" routerLink="/any-route">Go to Not Found Page</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button type="button" color="primary" size="large" (click)="showAlert()">
+            Show Alert
+          </ion-button>
+          <ion-alert-controller #alertCtrl></ion-alert-controller>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Text input</ion-label>
+          <ion-input type="text" [value]="text" (input)="text = $event.target.value"></ion-input>
+        </ion-item>
+        <ion-list-header>
+          Letters as items
+        </ion-list-header>
+        <ion-item *ngFor="let letter of text.split('')">
+          {{ letter }}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-page>
+</ion-app>
